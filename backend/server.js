@@ -7,11 +7,11 @@ import ClickModel from "./models/ClickModel.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: ["https://click-to-earn-nft.vercel.app", "http://localhost:5173"] }));
 
 
 mongoose
-    .connect(process.env.MONGO_URI, )
+    .connect(process.env.MONGO_URI,)
     .then(() => console.log("✅ MongoDB Connected"))
     .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
